@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RailVehicle : IMovable
+public class RailVehicle : IMovableLiskov
 {
     public float speed = 100;
     public virtual void GoForward()

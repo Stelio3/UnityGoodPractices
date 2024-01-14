@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadVehicle : IMovable, ITurnable
+public class RoadVehicle : IMovableLiskov, ITurnable
 {
     public float speed = 100f;
     public float turnSpeed = 5f;
