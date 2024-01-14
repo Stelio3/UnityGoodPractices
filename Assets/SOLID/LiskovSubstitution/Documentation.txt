@@ -1,0 +1,20 @@
+Liskov Substitution Principle
+
+Derived classes must be substitutable for their base class. 
+Use the base classes just to declare functions you are sure ALL subclasses are going to need it.
+
+- If you are removing features when subclassing, you are likely breaking
+Liskov substitution:
+
+- Keep abstractions simple: The more logic you put into the base class the more likely you will break LSP.
+
+- A subclass needs to have the same public members as the base class
+
+- Consider the class API before establishing class hierarchies: Even though you think of them all as vehicles, it might make more
+sense for a Car and Train to inherit from separate parent classes.
+Classifications in reality don’t always translate into class hierarchy.
+
+- Favor composition over inheritance: Instead of trying to pass
+functionality through inheritance, create an interface or separate class to
+encapsulate a specific behavior.
+
