@@ -1,3 +1,6 @@
 Dependency Inversion Principle
 
 High-level modules should not import anything directly from low-level modules. Both should depend on abstractions.
+
+Use abstract classes to define the base functionality where you want to share code. 
+Use interfaces to define peripheral abilities where you need flexibility.
