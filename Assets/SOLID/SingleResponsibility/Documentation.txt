@@ -1,0 +1,14 @@
+Single-responsibility principle
+
+Each module, class, or function is responsible for one thing and encapsulates only that part of the logic.
+
+- Readability: Short classes are easier to read. There is no hard and fast rule
+but many developers set a limit of 200-300 lines. Determine for yourself
+or as a team what constitutes “short.” When you exceed this threshold,
+decide if you can refactor it into smaller parts.
+
+- Extensibility: You can inherit from small classes more easily.
+Modify or replace them without fear of breaking unintended features.
+
+- Reusability: Design your classes to be small and modular so that you can
+reuse them for other parts of your game.
