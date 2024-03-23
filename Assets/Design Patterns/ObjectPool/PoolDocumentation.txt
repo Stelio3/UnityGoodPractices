@@ -1,0 +1,20 @@
+Improvements
+
+Make it static or a singleton: If you need to generate pooled objects
+from a variety of sources, consider making the object pool static. This
+makes it accessible anywhere in your application but precludes use of the
+Inspector. Alternatively, combine the object pool pattern with the singleton
+pattern to make it globally accessible for ease of use.
+— Use a dictionary to manage multiple pools: If you have a number of
+different Prefabs that you want to pool, store them in separate pools and
+store a key-value pair so you know which pool to query (the InstanceID
+of the Prefab can work as the unique key).
+— Remove unused GameObjects creatively: Part of utilizing an object pool
+effectively is hiding unused objects and returning them to the pool. Use
+every opportunity to deactivate a pooled object (e.g., offscreen, hidden by
+explosions, etc.)
+— Check for errors: Avoid releasing an object that is already in the pool.
+Otherwise, it might result in an error at runtime.
+— Add a maximum size/cap: Lots of pooled objects consume memory. You
+may need to remove objects that exceed a certain limit so that the pool
+doesn’t use too many resources.
