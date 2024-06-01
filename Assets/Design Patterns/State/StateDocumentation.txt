@@ -1,0 +1,21 @@
+Improvements
+The capsule in the sample project changes color, and the UI updates with the
+player’s internal state. In a real-world example, you could have much more
+complex effects to accompany the state changes:
+
+— Combine the state pattern with animation: One common application for
+the state pattern is animation. The player or enemy characters are often
+represented as primitives (a capsule) on a macro level. Then, you can have
+animated geometry that reacts to internal state changes, so the game
+actor can appear to be running, jumping, swimming, climbing, etc.
+- Add events: To communicate state changes to outside objects, you
+might want to add events (see the observer pattern). Having an event on
+entering or exiting a state can notify the relevant listeners and have them
+respond at runtime.
+— Add a hierarchy: As you begin to describe more complex entities with the
+state pattern, you might want to implement hierarchical state machines.
+Inevitably some states will be similar; for example, if the player or game
+actor is grounded, it can duck or jump whether in a WalkingState or
+RunningState.
+- Implement simple AI: Finite-state machines can also be useful in
+generating basic enemy AI.
