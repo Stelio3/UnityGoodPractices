@@ -1,0 +1,40 @@
+— The Model stores data: The Model is strictly a data container that holds
+values. It does not perform gameplay logic or run calculations.
+— The View is the interface: The View formats and renders a graphical
+presentation of your data onscreen.
+— The Controller handles logic: Think of this as the brain. It processes the
+game data and calculates how the values change at runtime.
+
+Pros and cons
+MVP (and MVC) really shine for larger applications. If your game requires a
+sizable team to develop and you expect to maintain it for a long time after
+launch, you might benefit from the following:
+— Smooth division of work: Because you’ve separated the View from the
+Presenter, developing and updating your user interface can happen nearly
+independently from the rest of the codebase.
+This lets you divide your labor between specialized developers. Do you
+have expert front-end developers on your team? Let them take care of the
+View. They can work independently from everyone else.
+— Simplified unit testing with MVP and MVC: These design patterns
+separate gameplay logic from the user interface. As such, you can
+simulate objects to work with your code without actually needing to enter
+Play mode in the Editor. This can save considerable amounts of time.
+— Readable code that can be maintained: You’ll tend to make smaller
+classes with this design pattern, which makes them easier to read. Fewer
+dependencies usually means fewer places for your software to break and
+fewer places that might be hiding bugs.
+
+Though MVC and MVP are widespread in web development or enterprise
+software, often, the benefits won’t be apparent until your application reaches
+a sufficient size and complexity. You’ll need to consider the following before
+implementing either pattern in your Unity project:
+
+— You need to plan ahead: Unlike the other patterns described in this guide,
+MVC and MVP are larger architectural patterns. To use one of them, you’ll
+need to split your classes by responsibility, which takes some organization
+and requires more work up front.
+— Not everything in your Unity project will fit the pattern: In a “pure” MVC
+or MVP implementation, anything that renders to screen really is part of
+the View. Not every Unity component is easily split between data, logic,
+and interface (e.g., a MeshRenderer). Also, simple scripts may not yield
+many benefits from MVC/MVP.
