@@ -1,0 +1,32 @@
+Pros and cons
+Implementing replayability or undoability is as simple as generating a collection of
+command objects. You can also use the command buffer to play back actions in
+sequence with specific controls.
+For example, think about a fighting game where a series of specific button clicks
+triggers a combo move or attack. Storing player actions with the command pattern
+makes setting up such combos much simpler.
+On the flip side, the command pattern introduces more structure, just like the other
+design patterns. You’ll have to decide where these extra classes and interfaces
+provide enough benefit for deploying command objects in your application.
+
+Improvements
+Once you learn the basics, you can affect the timing of commands and play them
+back in succession or reverse, depending on the context.
+Consider the following when incorporating the command pattern:
+— Create more commands: The sample project only includes one type
+of command object, the MoveCommand. You can create any number of
+command objects that implement ICommand and track them using the
+CommandInvoker.
+— Adding redo functionality is a matter of adding another stack: When
+you undo a command object, push it onto a separate stack that tracks
+redo operations. This way you can quickly cycle through the undo
+history or redo those actions. Clear out the redo stack when the user
+invokes an entirely new movement
+- Use a different collection for your buffer of command objects: A queue
+might be handier if you want first in, first out (FIFO) behavior. If you use
+a list, track the currently active index; commands before active index are
+undoable. Commands after the index are redoable.
+- Limit the size of the stacks: Undo and redo operations can quickly blow
+up out of control. Limit the stacks to the last number of commands.
+— Pass any necessary parameters into the constructor: This helps
+encapsulate the logic as seen in the MoveCommand example.
